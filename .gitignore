@@ -1,0 +1,16 @@
+# IDE and system files
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+
+# Environment variables (sensitive data)
+.env
+*.env
+
+# Local agent configs and temporary files
+.gemini/
+*.tmp
+*.log
+node_modules/
+dist/
