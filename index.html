@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Пайплайн Разработки | Локальный ПК — GitHub — GCP Server</title>
+  <meta name="description" content="Интерактивный дашборд нашего процесса совместной разработки: создание кода с ИИ локально, контроль версий на GitHub и развертывание в Docker на сервере Google Cloud.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-dot"></div>
+      <h1 class="logo-text">DevOps.Flow</h1>
+    </div>
+    <nav>
+      <a href="https://github.com/chizhkovk/-" target="_blank" rel="noopener" class="nav-link-btn" id="github-repo-btn">Мой GitHub Репозиторий</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Intro / Hero Section -->
+    <section class="intro-section">
+      <span class="intro-tag">Рабочий процесс</span>
+      <h2 class="intro-title">Наш Пайплайн Разработки</h2>
+      <p class="intro-subtitle">
+        Интерактивный путеводитель по нашей схеме создания, версионирования и автоматического развертывания веб-проектов.
+      </p>
+    </section>
+
+    <!-- Pipeline Visual Schema -->
+    <section class="pipeline-container">
+      <div class="pipeline-flow">
+        
+        <!-- Node 1: Local Dev -->
+        <div class="pipeline-node" id="node-local">
+          <div class="node-icon-wrapper">💻</div>
+          <h3 class="node-title">1. Локальный ПК</h3>
+          <p class="node-desc">Мы пишем и тестируем код локально с ИИ-ассистентом Antigravity в папке проекта.</p>
+        </div>
+
+        <!-- Connector 1 -->
+        <div class="pipeline-connector">
+          <div class="connector-pulse" id="pulse-1"></div>
+        </div>
+
+        <!-- Node 2: GitHub -->
+        <div class="pipeline-node" id="node-github">
+          <div class="node-icon-wrapper">🐙</div>
+          <h3 class="node-title">2. GitHub</h3>
+          <p class="node-desc">Код пушится в облачный репозиторий, фиксируя историю версий и коммитов.</p>
+        </div>
+
+        <!-- Connector 2 -->
+        <div class="pipeline-connector">
+          <div class="connector-pulse" id="pulse-2"></div>
+        </div>
+
+        <!-- Node 3: GCP Server -->
+        <div class="pipeline-node" id="node-server">
+          <div class="node-icon-wrapper">🐳</div>
+          <h3 class="node-title">3. GCP VM & Docker</h3>
+          <p class="node-desc">Удаленный Linux-сервер стягивает код и разворачивает его в изолированном контейнере Docker.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Simulation Section -->
+    <section class="terminal-section">
+      
+      <!-- Control Panel -->
+      <div class="control-panel">
+        <h3 class="control-title">Интерактивный симулятор</h3>
+        <p class="control-desc">Нажимайте кнопки ниже, чтобы симулировать прохождение кода по нашему пайплайну и видеть лог в реальном времени.</p>
+        
+        <button class="action-btn" id="btn-local" onclick="runSimulation('local')">
+          <span class="btn-number">1</span>
+          <span>Написать код и закоммитить локально</span>
+        </button>
+
+        <button class="action-btn" id="btn-push" onclick="runSimulation('push')" disabled>
+          <span class="btn-number">2</span>
+          <span>Отправить код на GitHub (Git Push)</span>
+        </button>
+
+        <button class="action-btn" id="btn-deploy" onclick="runSimulation('deploy')" disabled>
+          <span class="btn-number">3</span>
+          <span>Развернуть на удаленном сервере (Docker)</span>
+        </button>
+      </div>
+
+      <!-- Terminal Console Screen -->
+      <div class="terminal-screen">
+        <div class="terminal-header">
+          <div class="terminal-dot dot-red"></div>
+          <div class="terminal-dot dot-yellow"></div>
+          <div class="terminal-dot dot-green"></div>
+          <div class="terminal-title">bash - session@antigravity-dev</div>
+        </div>
+        <div class="terminal-body" id="console-output">
+          <div class="term-comment"># Симулятор пайплайна готов к работе.</div>
+          <div class="term-comment"># Выберите действие 1 в панели слева для старта.</div>
+          <div class="cursor-line">dev-pc:~/project$ </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/chizhkovk/-" target="_blank" rel="noopener" class="footer-link">Репозиторий проекта</a>
+      <a href="https://console.cloud.google.com/" target="_blank" rel="noopener" class="footer-link">Google Cloud Console</a>
+    </div>
+    <p>&copy; 2026 DevOps.Flow. Создано в соавторстве с ИИ-ассистентом Antigravity.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
